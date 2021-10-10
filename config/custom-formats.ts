@@ -8,7 +8,7 @@ export const Formats: FormatList = [
 	},
 
 	{
-		name: "[Gen 1] Red++",
+		name: "Red++",
 
 		mod: 'red++',
 		ruleset: ['Standard'],
