@@ -534,8 +534,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 	},
 	karatechop: {
-		basePower: 55,
 		inherit: true,
+		basePower: 55,
 		critRatio: 2,
 		type: "Normal",
 	},
