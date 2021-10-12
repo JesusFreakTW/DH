@@ -3,7 +3,10 @@
  * Some moves have had major changes, such as Bite's typing.
  */
 
-export const Moves: {[k: string]: ModdedMoveData} = {
+'use strict';
+
+/**@type {{[k: string]: ModdedMoveData}} */
+let BattleMovedex = {
 	absorb: {
 		inherit: true,
 		desc: "The user recovers 1/2 the HP lost by the target, rounded down. If this move breaks the target's substitute, the user does not recover any HP.",
@@ -62,7 +65,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			onHit(target, source, move) {
 				if (source && source !== target && move.category !== 'Physical' && move.category !== 'Special') {
-					const damage = this.effectData.totalDamage;
+					let damage = this.effectData.totalDamage;
 					this.effectData.totalDamage += damage;
 					this.effectData.lastDamage = damage;
 					this.effectData.sourcePosition = source.position;
@@ -95,7 +98,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 					}
 				}
 			},
-			onBeforeMove(pokemon, t, move) {
+			onBeforeMove(pokemon, target, move) {
 				if (this.effectData.duration === 1) {
 					if (!this.effectData.totalDamage) {
 						this.debug("Bide failed due to 0 damage taken");
@@ -103,8 +106,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 						return false;
 					}
 					this.add('-end', pokemon, 'Bide');
-					const target = this.effectData.sourceSide.active[this.effectData.sourcePosition];
-					this.moveHit(target, pokemon, move, {damage: this.effectData.totalDamage * 2} as ActiveMove);
+					let target = this.effectData.sourceSide.active[this.effectData.sourcePosition];
+					this.moveHit(target, pokemon, move, /** @type {ActiveMove} */ ({damage: this.effectData.totalDamage * 2}));
 					return false;
 				}
 				this.add('-activate', pokemon, 'Bide');
@@ -251,11 +254,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			// It will fail if the last move selected by the opponent has base power 0 or is not Normal or Fighting Type.
 			// If both are true, counter will deal twice the last damage dealt in battle, no matter what was the move.
 			// That means that, if opponent switches, counter will use last counter damage * 2.
-			const lastUsedMove = target.side.lastMove && this.dex.getMove(target.side.lastMove.id);
-			if (
-				lastUsedMove && lastUsedMove.basePower > 0 && ['Normal', 'Fighting'].includes(lastUsedMove.type) &&
-				this.lastDamage > 0 && !this.queue.willMove(target)
-			) {
+			let lastUsedMove = target.side.lastMove && this.dex.getMove(target.side.lastMove.id);
+			if (lastUsedMove && lastUsedMove.basePower > 0 && ['Normal', 'Fighting'].includes(lastUsedMove.type) && this.lastDamage > 0 && !this.willMove(target)) {
 				return 2 * this.lastDamage;
 			}
 			this.debug("Gen 1 Counter failed due to conditions not met");
@@ -281,7 +281,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onInvulnerability(target, source, move) {
 				if (move.id === 'swift') return true;
 				this.add('-message', 'The foe ' + target.name + ' can\'t be hit underground!');
-				return false;
+				return null;
 			},
 			onDamage(damage, target, source, move) {
 				if (!move || move.effectType !== 'Move') return;
@@ -300,15 +300,15 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		effect: {
 			duration: 4,
 			durationCallback(target, source, effect) {
-				const duration = this.random(1, 7);
+				let duration = this.random(1, 7);
 				return duration;
 			},
 			onStart(pokemon) {
-				if (!this.queue.willMove(pokemon)) {
+				if (!this.willMove(pokemon)) {
 					this.effectData.duration++;
 				}
-				const moves = pokemon.moves;
-				const move = this.dex.getMove(this.sample(moves));
+				let moves = pokemon.moves;
+				let move = this.dex.getMove(this.sample(moves));
 				this.add('-start', pokemon, 'Disable', move.name);
 				this.effectData.move = move.id;
 				return;
@@ -418,7 +418,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			onInvulnerability(target, source, move) {
 				if (move.id === 'swift') return true;
 				this.add('-message', 'The foe ' + target.name + ' can\'t be hit while flying!');
-				return false;
+				return null;
 			},
 			onDamage(damage, target, source, move) {
 				if (!move || move.effectType !== 'Move') return;
@@ -548,20 +548,20 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			},
 			onAfterMoveSelfPriority: 1,
 			onAfterMoveSelf(pokemon) {
-				const leecher = pokemon.side.foe.active[pokemon.volatiles['leechseed'].sourcePosition];
+				let leecher = pokemon.side.foe.active[pokemon.volatiles['leechseed'].sourcePosition];
 				if (!leecher || leecher.fainted || leecher.hp <= 0) {
 					this.debug('Nothing to leech into');
 					return;
 				}
 				// We check if leeched Pokémon has Toxic to increase leeched damage.
 				let toxicCounter = 1;
-				const residualdmg = pokemon.volatiles['residualdmg'];
+				let residualdmg = pokemon.volatiles['residualdmg'];
 				if (residualdmg) {
 					residualdmg.counter++;
 					toxicCounter = residualdmg.counter;
 				}
-				const toLeech = this.clampIntRange(Math.floor(pokemon.baseMaxhp / 16), 1) * toxicCounter;
-				const damage = this.damage(toLeech, pokemon, leecher);
+				let toLeech = this.dex.clampIntRange(Math.floor(pokemon.baseMaxhp / 16), 1) * toxicCounter;
+				let damage = this.damage(toLeech, pokemon, leecher);
 				if (residualdmg) this.hint("In Gen 1, Leech Seed's damage is affected by Toxic's counter.", true);
 				if (!damage || toLeech > damage) {
 					this.hint("In Gen 1, Leech Seed recovery is not limited by the remaining HP of the seeded Pokemon.", true);
@@ -577,6 +577,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		category: "Status",
 		desc: "While the user remains active, its Special is doubled when taking damage. Critical hits ignore this effect. If any Pokemon uses Haze, this effect ends.",
 		shortDesc: "While active, user's Special is 2x when damaged.",
+		id: "lightscreen",
+		isViable: true,
 		name: "Light Screen",
 		pp: 30,
 		priority: 0,
@@ -598,7 +600,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	metronome: {
 		inherit: true,
 		desc: "A random move is selected for use, other than Metronome or Struggle.",
-		noMetronome: ["Metronome", "Struggle"],
+		noMetronome: ['metronome', 'struggle'],
 		secondary: null,
 		target: "self",
 		type: "Normal",
@@ -608,12 +610,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "While the user remains active, this move is replaced by a random move known by the target, even if the user already knows that move. The copied move keeps the remaining PP for this move, regardless of the copied move's maximum PP. Whenever one PP is used for a copied move, one PP is used for this move.",
 		shortDesc: "Random move known by the target replaces this.",
 		onHit(target, source) {
-			const moveslot = source.moves.indexOf('mimic');
+			let moveslot = source.moves.indexOf('mimic');
 			if (moveslot < 0) return false;
-			const moves = target.moves;
-			const moveid = this.sample(moves);
+			let moves = target.moves;
+			let moveid = this.sample(moves);
 			if (!moveid) return false;
-			const move = this.dex.getMove(moveid);
+			let move = this.dex.getMove(moveid);
 			source.moveSlots[moveslot] = {
 				move: move.name,
 				id: move.id,
@@ -635,7 +637,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "The user uses the last move used by the target. Fails if the target has not made a move, or if the last move used was Mirror Move.",
 		onHit(pokemon) {
-			const foe = pokemon.side.foe.active[0];
+			let foe = pokemon.side.foe.active[0];
 			if (!foe || !foe.lastMove || foe.lastMove.id === 'mirrormove') {
 				return false;
 			}
@@ -745,6 +747,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		category: "Status",
 		desc: "While the user remains active, its Defense is doubled when taking damage. Critical hits ignore this protection. This effect can be removed by Haze.",
 		shortDesc: "While active, the user's Defense is doubled.",
+		id: "reflect",
+		isViable: true,
 		name: "Reflect",
 		pp: 20,
 		priority: 0,
@@ -769,12 +773,11 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "The user falls asleep for the next two turns and restores all of its HP, curing itself of any major status condition in the process. This does not remove the user's stat penalty for burn or paralysis. Fails if the user has full HP.",
 		onTryMove() {},
 		onHit(target, source, move) {
-			if (target.hp === target.maxhp) return false;
-			// Fail when health is 255 or 511 less than max
-			if (target.hp === (target.maxhp - 255) || target.hp === (target.maxhp - 511)) {
-				this.hint("In Gen 1, recovery moves fail if (user's maximum HP - user's current HP + 1) is divisible by 256.");
-				return false;
-			}
+			// Fails if the difference between
+			// max HP and current HP is 0, 255, or 511
+			if (target.hp >= target.maxhp ||
+			target.hp === (target.maxhp - 255) ||
+			target.hp === (target.maxhp - 511)) return false;
 			if (!target.setStatus('slp', source, move)) return false;
 			target.statusData.time = 2;
 			target.statusData.startTime = 2;
@@ -785,6 +788,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "No competitive use.",
 		shortDesc: "No competitive use.",
+		isViable: false,
 		forceSwitch: false,
 		onTryHit() {},
 		priority: 0,
@@ -877,7 +881,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		desc: "Deals Normal-type damage. If this move was successful, the user takes damage equal to 1/2 the HP lost by the target, rounded down, but not less than 1 HP. This move is automatically used if none of the user's known moves can be selected.",
 		shortDesc: "User loses 1/2 the HP lost by the target.",
-		pp: 10,
 		recoil: [1, 2],
 		onModifyMove() {},
 	},
@@ -896,6 +899,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		category: "Status",
 		desc: "The user takes 1/4 of its maximum HP, rounded down, and puts it into a substitute to take its place in battle. The substitute has 1 HP plus the HP used to create it, and is removed once enough damage is inflicted on it or 255 damage is inflicted at once, or if the user switches out or faints. Until the substitute is broken, it receives damage from all attacks made by the opposing Pokemon and shields the user from status effects and stat stage changes caused by the opponent, unless the effect is Disable, Leech Seed, sleep, primary paralysis, or secondary confusion and the user's substitute did not break. The user still takes normal damage from status effects while behind its substitute, unless the effect is confusion damage, which is applied to the opposing Pokemon's substitute instead. If the substitute breaks during a multi-hit attack, the attack ends. Fails if the user does not have enough HP remaining to create a substitute, or if it already has a substitute. The user will create a substitute and then faint if its current HP is exactly 1/4 of its maximum HP.",
 		shortDesc: "User takes 1/4 its max HP to put in a Substitute.",
+		id: "substitute",
+		isViable: true,
 		name: "Substitute",
 		pp: 10,
 		priority: 0,
@@ -930,11 +935,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				if (move.category === 'Status') {
 					// In gen 1 it only blocks:
 					// poison, confusion, secondary effect confusion, stat reducing moves and Leech Seed.
-					const SubBlocked = ['lockon', 'meanlook', 'mindreader', 'nightmare'];
-					if (
-						move.status === 'psn' || move.status === 'tox' || (move.boosts && target !== source) ||
-						move.volatileStatus === 'confusion' || SubBlocked.includes(move.id)
-					) {
+					let SubBlocked = ['lockon', 'meanlook', 'mindreader', 'nightmare'];
+					if (move.status === 'psn' || move.status === 'tox' || (move.boosts && target !== source) || move.volatileStatus === 'confusion' || SubBlocked.includes(move.id)) {
 						return false;
 					}
 					return;
@@ -949,7 +951,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				if (!uncappedDamage) return uncappedDamage;
 				source.lastDamage = uncappedDamage;
 				target.volatiles['substitute'].hp -= uncappedDamage > target.volatiles['substitute'].hp ?
-					target.volatiles['substitute'].hp : uncappedDamage;
+					/** @type {number} */(target.volatiles['substitute'].hp) : uncappedDamage;
 				if (target.volatiles['substitute'].hp <= 0) {
 					target.removeVolatile('substitute');
 					target.subFainted = true;
@@ -967,7 +969,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 				}
 				this.runEvent('AfterSubDamage', target, source, move, uncappedDamage);
 				// Add here counter damage
-				const lastAttackedBy = target.getLastAttackedBy();
+				let lastAttackedBy = target.getLastAttackedBy();
 				if (!lastAttackedBy) {
 					target.attackedBy.push({source: source, move: move.id, damage: uncappedDamage, thisTurn: true});
 				} else {
@@ -983,7 +985,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		secondary: null,
 		target: "self",
 		type: "Normal",
-		flags: {},
 	},
 	superfang: {
 		inherit: true,
@@ -1045,6 +1046,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		accuracy: 85,
 		desc: "No competitive use.",
 		shortDesc: "No competitive use.",
+		isViable: false,
 		forceSwitch: false,
 		onTryHit() {},
 		priority: 0,
@@ -1079,3 +1081,5 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		},
 	},
 };
+
+exports.BattleMovedex = BattleMovedex;
