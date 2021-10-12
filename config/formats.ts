@@ -1313,6 +1313,11 @@ export const Formats: FormatList = [
         ruleset: ['Standard', 'Team Preview'],
 		unbanlist: ['Ampharos', 'Forretress', 'Seviper', 'Zangoose', 'Gogoat', 'Breloom', 'Sceptile'],
     },
+	  name: "[Gen 1] Red++",
+        desc: `<b>[Gen 1] Rose Red/Iris Blue</b>: Teambuilder tool for red++ rom hack`,
+        mod: 'redplusplus',
+        ruleset: ['Standard', 'Team Preview'],
+    },
 	{
 		name: "[Gen 8] Roulettemons",
 		desc: `<b>Roulettemons</b>: A metagame made up of brand new Pok&eacute;mon that have randomly generated moves, stats, abilities, and types.`,
