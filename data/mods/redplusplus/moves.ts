@@ -241,7 +241,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			volatileStatus: 'confusion',
 		},
 		desc: "Has a 10% chance to confuse the target.",
-		shortDesc: "10% chance to confuse.",
+		shortDesc: "10% chance to confuse the target.",
 	},
 	flash: {
 		inherit: true,
@@ -271,6 +271,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			volatileStatus: 'flinch',
 		},
 		desc: "Has a 10% chance to flinch the target.",
-		shortDesc: "10% chance to flinch.",
+		shortDesc: "10% chance to flinch the target.",
 	},
 };
