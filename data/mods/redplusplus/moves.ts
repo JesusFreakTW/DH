@@ -273,8 +273,4 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		desc: "Has a 10% chance to flinch the target.",
 		shortDesc: "10% chance to flinch the target.",
 	},
-	honeclaws: {
-		inherit: true,
-		isNonstandard: null,
-	},
 };
