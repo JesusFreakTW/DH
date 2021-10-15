@@ -276,5 +276,6 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	honeclaws: {
 		inherit: true,
 		isNonstandard: null,
+		gen: 1,
 	},
 };
