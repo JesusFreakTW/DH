@@ -530,6 +530,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		isNonstandard: null,
 		gen: 1,
 		basePower: 70,
+		priority: 1,
 	},
 	shadowball: {
 		inherit: true,
@@ -857,6 +858,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		priority: 1,
 	},
 	gigaimpact: {
 		inherit: true,
@@ -939,6 +941,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		priority: 1,
 	},
 	bonerush: {
 		inherit: true,
