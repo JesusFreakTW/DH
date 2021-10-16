@@ -6,5 +6,12 @@
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen1',
-	gen: 1,
+	init() {
+		const learnset = (mon: string, move: string, sources: string[]) => {
+			for (const move of moves) {
+				this.modData('Learnsets', this.toID(mon)).learnset[this.toID(move)] = sources;
+			}
+		};
+	learnset("charmander","honeclaws",["1L16"]);
+	}
 };
