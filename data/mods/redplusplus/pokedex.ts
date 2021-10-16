@@ -47,4 +47,290 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		inherit: true,
 		baseStats: {hp: 140, atk: 70, def: 45, spa: 85, spd: 85, spe: 45},
 	},
+//added mons
+	lugia: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	houndour: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	houndoom: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	murkrow: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	honchkrow: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	heracross: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	espeon: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	umbreon: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	glaceon: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	leafeon: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	sylveon: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	scizor: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	steelix: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	crobat: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	politoed: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	slowking: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	bellossom: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	kingdra: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	blissey: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	porygon2: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	porygonz: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	magmortar: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	electivire: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	magnezone: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	rhyperior: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	tangrowth: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	lickilicky: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	togepi: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	togetic: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	togekiss: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	sneasel: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	weavile: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	skarmory: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	misdreavus: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	mismagius: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	miltank: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	chinchou: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	lanturn: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	slugma: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	magcargo: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	torkoal: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	latias: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	latios: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	hitmontop: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	tyrogue: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	pichu: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	cleffa: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	igglybuff: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	smoochum: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	elekid: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	magby: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	mimejr: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	happiny: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	munchlax: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	zigzagoon: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	linoone: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
+	hooh: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
+	},
 };
