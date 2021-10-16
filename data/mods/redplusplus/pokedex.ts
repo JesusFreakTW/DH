@@ -48,170 +48,201 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		baseStats: {hp: 140, atk: 70, def: 45, spa: 85, spd: 85, spe: 45},
 	},
 //added mons
-	lugia: {
+	lugia: {//spa: 90 - 154
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 106, atk: 90, def: 130, spa: 154, spd: 154, spe: 110},
 	},
-	houndour: {
+	houndour: {//spd: 50 -  80
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 45, atk: 60, def: 30, spa: 80, spd: 80, spe: 65},
 	},
-	houndoom: {
+	houndoom: {//spd: 80 - 110
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 75, atk: 90, def: 50, spa: 110, spd: 110, spe: 95},
 	},
-	murkrow: {
+	murkrow: {//spd: 42 - 85
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 60, atk: 85, def: 42, spa: 85, spd: 85, spe: 91},
 	},
-	honchkrow: {
+	honchkrow: {//spd: 52 - 105
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 100, atk: 125, def: 52, spa: 105, spd: 105, spe: 71},
 	},
-	heracross: {
+	heracross: {//spa: 40 - 95
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 80, atk: 125, def: 75, spa: 95, spd: 95, spe: 85},
 	},
-	espeon: {
+	espeon: {//spd: 95 - 130
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 65, atk: 65, def: 60, spa: 130, spd: 130, spe: 110},
 	},
-	umbreon: {
+	umbreon: {//spa: 60 - 130
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 95, atk: 65, def: 110, spa: 130, spd: 130, spe: 65},
 	},
-	glaceon: {
+	glaceon: {//spd: 95-130
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 65, atk: 60, def: 110, spa: 130, spd: 130, spe: 65},
 	},
-	leafeon: {
+	leafeon: {//spa: 60 - 65
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 65, atk: 110, def: 130, spa: 65, spd: 65, spe: 95},
 	},
-	sylveon: {
+	sylveon: {//spa: 110 - 130
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 95, atk: 65, def: 65, spa: 130, spd: 130, spe: 60},
 	},
-	scizor: {
+	scizor: {//spa: 55 - 80
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 70, atk: 130, def: 100, spa: 80, spd: 80, spe: 65},
 	},
-	steelix: {
+	steelix: {//spa: 55 - 65
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 75, atk: 85, def: 200, spa: 65, spd: 65, spe: 30},
 	},
-	crobat: {
+	crobat: {//spa: 70 - 80
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 85, atk: 90, def: 80, spa: 80, spd: 80, spe: 130},
 	},
-	politoed: {
+	politoed: {//spa: 90 - 100
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 90, atk: 75, def: 75, spa: 100, spd: 100, spe: 70},
 	},
-	slowking: {
+	slowking: {//spa: 100 - 110
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 95, atk: 75, def: 80, spa: 110, spd: 110, spe: 30},
 	},
-	bellossom: {
+	bellossom: {//def: 85 - 95, spa: 90 - 100 (note: not fairy type)
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 75, atk: 80, def: 95, spa: 100, spd: 100, spe: 50},
 	},
 	kingdra: {
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
 	},
-	blissey: {
+	blissey: {//spa: 75 - 135
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 255, atk: 10, def: 10, spa: 135, spd: 135, spe: 55},
 	},
-	porygon2: {
+	porygon2: {//spd: 95 - 105
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 85, atk: 80, def: 90, spa: 105, spd: 105, spe: 60},
 	},
-	porygonz: {
+	porygonz: {//spd: 75 - 135
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 85, atk: 80, def: 70, spa: 135, spd: 135, spe: 90},
 	},
-	magmortar: {
+	magmortar: {//spd: 95 - 125
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 75, atk: 95, def: 67, spa: 125, spd: 125, spe: 83},
 	},
-	electivire: {
+	electivire: {//spd: 85 - 95
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 75, atk: 123, def: 67, spa: 95, spd: 95, spe: 95},
 	},
-	magnezone: {
+	magnezone: {//spd: 90 - 130
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 70, atk: 70, def: 115, spa:130, spd: 130, spe: 60},
 	},
 	rhyperior: {
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
 	},
-	tangrowth: {
+	tangrowth: {//spd: 50 - 110
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 100, atk: 100, def: 125, spa: 110, spd: 110, spe: 50},
 	},
-	lickilicky: {
+	lickilicky: {//spa: 80 - 95
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 110, atk: 85, def: 95, spa: 95, spd: 95, spe: 50},
 	},
-	togepi: {
+	togepi: {//spa: 40 - 65
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 35, atk: 20, def: 65, spa: 65, spd: 65, spe: 20},
 	},
-	togetic: {
+	togetic: {//spa: 80 - 105
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 55, atk: 40, def: 85, spa: 105, spd: 105, spe: 40},
 	},
-	togekiss: {
+	togekiss: {//spd: 115 - 120
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 85, atk: 50, def: 95, spa: 120, spd: 120, spe: 80},
 	},
-	sneasel: {
+	sneasel: {//spa: 35 - 75
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 55, atk: 95, def: 55, spa: 75, spd: 75, spe: 115},
 	},
-	weavile: {
+	weavile: {//spa: 45 - 85
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 70, atk: 120, def: 65, spa: 85, spd: 85, spe: 125},
 	},
-	skarmory: {
+	skarmory: {//spa: 40 - 70
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 65, atk: 80, def: 140, spa: 70, spd: 70, spe: 70},
 	},
 	misdreavus: {
 		inherit: true,
@@ -223,10 +254,11 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		isNonstandard: null,
 		gen: 1,
 	},
-	miltank: {
+	miltank: {//spa: 40 - 70
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 95, atk: 80, def: 105, spa: 70, spd: 70, spe: 100},
 	},
 	chinchou: {
 		inherit: true,
@@ -238,35 +270,41 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		isNonstandard: null,
 		gen: 1,
 	},
-	slugma: {
+	slugma: {//spd: 40 - 70
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 40, atk: 40, def: 40, spa: 70, spd: 70, spe: 20},
 	},
-	magcargo: {
+	magcargo: {//hp: 50 - 60, spa: 80 - 90, spd: 80 - 90
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 60, atk: 50, def: 120, spa: 90, spd: 90, spe: 30},
 	},
-	torkoal: {
+	torkoal: {//spd: 70 - 85
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 70, atk: 85, def: 140, spa: 85, spd: 85, spe: 20},
 	},
-	latias: {
+	latias: {//spa: 110 - 130
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 80, atk: 80, def: 90, spa: 130, spd: 130, spe: 110},
 	},
-	latios: {
+	latios: {//spd: 110 - 130
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 80, atk: 90, def: 80, spa: 130, spd: 130, spe: 110},
 	},
-	hitmontop: {
+	hitmontop: {//spa: 35 - 110
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 50, atk: 95, def: 95, spa: 110, spd: 110, spe: 70},
 	},
 	tyrogue: {
 		inherit: true,
@@ -278,59 +316,70 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		isNonstandard: null,
 		gen: 1,
 	},
-	cleffa: {
+	cleffa: {//spa: 45 - 55
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 50, atk: 25, def: 28, spa: 55, spd: 55, spe: 15},
 	},
-	igglybuff: {
+	igglybuff: {//spd: 20 - 40
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 90, atk: 30, def: 15, spa: 40, spd: 40, spe: 15},
 	},
-	smoochum: {
+	smoochum: {//spd: 65 - 85
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 45, atk: 30, def: 15, spa: 85, spd: 85, spe: 65},
 	},
-	elekid: {
+	elekid: {//spd: 55 - 65
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 45, atk: 63, def: 37, spa: 65, spd: 65, spe: 95},
 	},
-	magby: {
+	magby: {//spd: 55 - 70
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 45, atk: 75, def: 37, spa: 70, spd: 70, spe: 83},
 	},
-	mimejr: {
+	mimejr: {//spa: 70 - 90
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 20, atk: 25, def: 45, spa: 90, spd: 90, spe: 60},
 	},
-	happiny: {
+	happiny: {//spa: 15 - 65
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 100, atk: 5, def: 5, spa: 65, spd: 65, spe: 30},
 	},
-	munchlax: {
+	munchlax: {//spa: 40 - 85
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 135, atk: 85, def: 40, spa: 85, spd: 85, spe: 5},
 	},
-	zigzagoon: {
+	zigzagoon: {//spa: 30 - 41
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 38, atk: 30, def: 41, spa: 41, spd: 41, spe: 60},
 	},
-	linoone: {
+	linoone: {//spa: 50 - 61
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 78, atk: 70, def: 61, spa: 61, spd: 61, spe: 100},
 	},
-	hooh: {
+	hooh: {//spa: 110 - 154
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
+		baseStats: {hp: 106, atk: 130, def: 90, spa: 154, spd: 154, spe: 90},
 	},
 };
