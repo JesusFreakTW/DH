@@ -26,7 +26,8 @@ export const Scripts: ModdedBattleScriptsData = {
 			charmander: {
 				name: "charmander",
 				moveChanges: [
-				["honeclaws",["1L16"]]
+				["honeclaws",["1L16"]],
+				["metalclaw",["1L13"]]
 				]
 			}
 		};
