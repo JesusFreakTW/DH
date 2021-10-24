@@ -30,6 +30,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				]
 			}
 		};
+		learnset(learnsetChanges);
 	}
 };
 
