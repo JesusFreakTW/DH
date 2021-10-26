@@ -10,10 +10,31 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	clefable: {//spc: 85 - 95
 		inherit: true,
 		baseStats: {hp: 95, atk: 70, def: 73, spa: 95, spd: 95, spe: 60},
+		types: ["Fairy"],
+	},
+	clefairy: {
+		inherit: true,
+		types: ["Fairy"],
 	},
 	golem: {//atk: 110 - 120
 		inherit: true,
 		baseStats: {hp: 80, atk: 120, def: 130, spa: 55, spd: 55, spe: 45},
+	},
+	jigglypuff: {
+		inherit: true,
+		types: ["Normal","Fairy"],
+	},
+	magnemite: {
+		inherit: true,
+		types: ["Electric", "Steel"],
+	},
+	magneton: {
+		inherit: true,
+		types: ["Electric", "Steel"],
+	},
+	mrmime: {
+		inherit: true,
+		types: ["Psychic","Fairy"],
 	},
 	nidoking: {//atk: 92 - 102
 		inherit: true,
@@ -46,6 +67,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 	wigglytuff: {//spc: 50 - 85
 		inherit: true,
 		baseStats: {hp: 140, atk: 70, def: 45, spa: 85, spd: 85, spe: 45},
+		types: ["Normal","Fairy"],
 	},
 //added mons
 	lugia: {//spa: 90 - 154
@@ -213,18 +235,21 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		isNonstandard: null,
 		gen: 1,
 		baseStats: {hp: 35, atk: 20, def: 65, spa: 65, spd: 65, spe: 20},
+		types: ["Fairy"],
 	},
 	togetic: {//spa: 80 - 105
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
 		baseStats: {hp: 55, atk: 40, def: 85, spa: 105, spd: 105, spe: 40},
+		types: ["Fairy","Flying"],
 	},
 	togekiss: {//spd: 115 - 120
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
 		baseStats: {hp: 85, atk: 50, def: 95, spa: 120, spd: 120, spe: 80},
+		types: ["Fairy","Flying"],
 	},
 	sneasel: {//spa: 35 - 75
 		inherit: true,
@@ -321,12 +346,14 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		isNonstandard: null,
 		gen: 1,
 		baseStats: {hp: 50, atk: 25, def: 28, spa: 55, spd: 55, spe: 15},
+		types: ["Fairy"],
 	},
 	igglybuff: {//spd: 20 - 40
 		inherit: true,
 		isNonstandard: null,
 		gen: 1,
 		baseStats: {hp: 90, atk: 30, def: 15, spa: 40, spd: 40, spe: 15},
+		types: ["Normal","Fairy"],
 	},
 	smoochum: {//spd: 65 - 85
 		inherit: true,
@@ -351,6 +378,7 @@ export const Pokedex: {[k: string]: ModdedSpeciesData} = {
 		isNonstandard: null,
 		gen: 1,
 		baseStats: {hp: 20, atk: 25, def: 45, spa: 90, spd: 90, spe: 60},
+		types: ["Psychic","Fairy"],
 	},
 	happiny: {//spa: 15 - 65
 		inherit: true,

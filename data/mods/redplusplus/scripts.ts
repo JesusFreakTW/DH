@@ -7,7 +7,3 @@
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen1',
 };
-
-
-
-//want to be able to just write charmander one time, then write moves and levels
