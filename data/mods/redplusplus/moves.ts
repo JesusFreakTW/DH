@@ -8,6 +8,10 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		inherit: true,
 		type: "Fighting",
 	},
+	firepunch: {
+		inherit: true,
+		category: "Physical",
+	},
 	razorwind: {
 		inherit: true,
 		accuracy: 100,
@@ -480,7 +484,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 1,
 		recoil: [25, 100],
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage.",
-		shortdesc: "Has 1/4 recoil.",
+		shortDesc: "Has 1/4 recoil.",
 	},
 	blastburn: {
 		inherit: true,
@@ -557,7 +561,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 1,
 		type: "Fairy",
 		desc: "The user restores 1/2 of its maximum HP, rounded down.",
-		shortdesc: "Heals the user by 50% of its max HP.",
+		shortDesc: "Heals the user by 50% of its max HP.",
 	},
 	hex: {
 		inherit: true,
@@ -651,9 +655,12 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 			status: 'par',
 		},
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage. Has a 10% chance to paralyze target.",
-		shortdesc: "Has 25% recoil. 10% chance to paralyze target.",
+		shortDesc: "Has 25% recoil. 10% chance to paralyze target.",
 	},
 	muddywater: {
+		inherit: true,
+		isNonstandard: null,
+		gen: 1,
 		secondary: {
 			chance: 33,
 			boosts: {
@@ -712,7 +719,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		gen: 1,
 		recoil: [25, 100],
 		desc: "If the target lost HP, the user takes recoil damage equal to 1/4 the HP lost by the target, rounded down, but not less than 1 HP. If this move breaks the target's substitute, the user does not take any recoil damage.",
-		shortdesc: "Has 1/4 recoil.",
+		shortDesc: "Has 1/4 recoil.",
 	},
 	poisonjab: {
 		inherit: true,
