@@ -6,17 +6,4 @@
 
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen1',
-	init() {
-		let newCategory = '';
-		for (const i in this.data.Moves) {
-			if (!this.data.Moves[i]) {
-				console.log(i);
-			}
-			if (this.data.Moves[i].category === 'Status') continue;
-			newCategory = Dex.dexes.base.data.Moves[i].category;
-			if (newCategory !== this.data.Moves[i].category) {
-				this.modData('Moves', i).category = newCategory;
-			}
-		}
-	},
 };
