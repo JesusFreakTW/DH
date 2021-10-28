@@ -5,7 +5,7 @@
  */
 
 export const Scripts: ModdedBattleScriptsData = {
-	inherit: 'gen1',
+	inherit: 'gen2',
 	gen: 1,
 	init() {
 		let newCategory = '';
