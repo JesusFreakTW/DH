@@ -4,8 +4,6 @@
  * This generation inherits all the changes from older generations, that must be taken into account when editing code.
  */
 
-import { consoleips } from "../../../config/config-example";
-
 export const Scripts: ModdedBattleScriptsData = {
 	inherit: 'gen1',
 	init() {
