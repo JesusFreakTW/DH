@@ -15,7 +15,7 @@ export const Scripts: ModdedBattleScriptsData = {
 				console.log(i);
 			}
 			if (this.data.Moves[i].category === 'Status') continue;
-			newCategory = Dex.dexes.base.data.Moves[i].category;
+			newCategory = ModdedDex.dexes.base.data.Moves[i].category;
 			if (newCategory !== this.data.Moves[i].category) {
 				this.modData('Moves', i).category = newCategory;
 			}
