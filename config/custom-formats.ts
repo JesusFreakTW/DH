@@ -12,6 +12,7 @@ export const Formats: FormatList = [
 
 		mod: 'redplusplus',
 		ruleset: ['Standard'],
+		unbanlist: ['dig','fly'],
 	},
 
 
