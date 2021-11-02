@@ -797,6 +797,8 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 	},
 	earthpower: {
 		inherit: true,
+		isNonstandard: null,
+		gen: 1,
 		secondary: {
 			chance: 33,
 			boosts: {
