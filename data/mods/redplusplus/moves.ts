@@ -212,7 +212,7 @@ export const Moves: {[k: string]: ModdedMoveData} = {
 		basePower: 130,
 		pp: 10,
 	},
-	hijumpkick: {
+	highjumpkick: {
 		inherit: true,
 		basePower: 130,
 		pp: 10,
