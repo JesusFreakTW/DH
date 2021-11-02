@@ -9195,7 +9195,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
             "acrobatics": [
                 "1L37"
             ],
-            "hijumpkick": [
+            "highjumpkick": [
                 "1L43"
             ],
             "xscissor": [
@@ -11667,7 +11667,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
             "aerialace": [
                 "1L25"
             ],
-            "hijumpkick": [
+            "highjumpkick": [
                 "1L29"
             ],
             "doubleteam": [
@@ -22262,7 +22262,7 @@ export const Learnsets: {[k: string]: ModdedLearnsetData} = {
             "lowsweep": [
                 "1L55"
             ],
-            "hijumpkick": [
+            "highjumpkick": [
                 "1L60"
             ],
             "dynamicpunch": [
